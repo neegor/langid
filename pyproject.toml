@@ -1,0 +1,51 @@
+[project.urls]
+Homepage = "https://cryptoswift.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/me/spam.git"
+Issues = "https://github.com/me/spam/issues"
+Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+
+[project]
+name = "csw-main"
+description = "Основное Django приложение для CryptoSwift"
+requires-python = ">=3.12"
+version = "2025"
+license = "proprietary"
+dependencies = [
+    "numpy==2.3.0",
+
+]
+
+[dependency-groups]
+dev = [
+    "ruff==0.11.0",
+]
+
+[tool.ruff]
+line-length = 120
+exclude = [
+    "manage.py",
+    "apps.py",
+    "**/migrations"
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "PT009",
+    "PT027",
+
+
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.mccabe]
+max-complexity = 8
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
